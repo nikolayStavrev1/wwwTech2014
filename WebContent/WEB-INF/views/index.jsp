@@ -17,7 +17,8 @@
 <body>
 <div class="container">
 	<ul class="nav navbar-nav navbar-right">
-       <li id="nav-register-btn" class=""><a href="http://bootsnipp.com/register">Register</a></li>
+       <li id="nav-register-btn" class=""><a href="/register">/Register</a></li>
+       <a href="/register">/Register</a>
        <li id="nav-login-btn" class="active"><a href="http://bootsnipp.com/login"><i class="icon-login"></i>Login</a></li>
     </ul>
 	<div id="myModal" class="modal fade" tabindex="-1" role="dialog">
@@ -54,7 +55,7 @@
             </div>
             <div class="form-group">
               <input type="submit" class="btn btn-success btn-lg btn-block">Sign In</button>
-              <span class="pull-right"><a href="#">Register</a></span><span><a href="#">Need help?</a></span>
+              <span class="pull-right"><a href="/register">Regisaater</a></span><span><a href="#">Need help?</a></span>
             </div>
           </form>
       </div>
