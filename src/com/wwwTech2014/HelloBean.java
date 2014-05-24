@@ -21,18 +21,17 @@ import javax.ws.rs.core.Context;
 import javax.ws.rs.core.Response;
 
 import com.sun.jersey.api.view.Viewable;
+import com.wwwTech2014.utils.JPAUtil;
 
 
 @Path("/")
 public class HelloBean{
 	
+	private EntityManager em = JPAUtil.getEntityManager();
 	
 	@GET
 	public Response get(){
-		EntityManagerFactory emf = Persistence.createEntityManagerFactory("www");
-		EntityManager entityManager = emf.createEntityManager();
-		System.out.println(entityManager.createQuery("SELECT t FROM Testtable t").getResultList());
-		
+		System.out.println(em.createQuery("SELECT e FROM Employee e").getResultList());
 		return Response.ok(new Viewable("/index", null)).build();
 	}
 	
