@@ -45,6 +45,7 @@
       </div>
       <div class="modal-body">
       ${it.error}
+      
           <form class="form col-md-12 center-block" action="login" method="POST">
             <div class="form-group">
               <input type="text" class="form-control input-lg" placeholder="Email" name="email">
