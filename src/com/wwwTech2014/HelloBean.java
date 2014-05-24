@@ -29,9 +29,7 @@ public class HelloBean{
 	
 	@GET
 	public Response get(){
-		EntityManagerFactory emf = Persistence.createEntityManagerFactory("www");
-		EntityManager entityManager = emf.createEntityManager();
-		System.out.println(entityManager.createQuery("SELECT t FROM Testtable t").getResultList());
+//		EntityManagerFactory emf = Persistence.createEntityManagerFactory("www");
 		
 		return Response.ok(new Viewable("/index", null)).build();
 	}
