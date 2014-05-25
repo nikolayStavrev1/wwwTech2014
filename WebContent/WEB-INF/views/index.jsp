@@ -16,10 +16,6 @@
 </head>
 <body>
 <div class="container">
-	<ul class="nav navbar-nav navbar-right">
-       <li id="nav-register-btn" class=""><a href="http://bootsnipp.com/register">Register</a></li>
-       <li id="nav-login-btn" class="active"><a href="http://bootsnipp.com/login"><i class="icon-login"></i>Login</a></li>
-    </ul>
 	<div id="myModal" class="modal fade" tabindex="-1" role="dialog">
 <div class="modal-dialog">
 	<div class="modal-content">
@@ -54,15 +50,12 @@
               <input type="password" class="form-control input-lg" placeholder="Password" name="password">
             </div>
             <div class="form-group">
-              <input type="submit" class="btn btn-success btn-lg btn-block">Sign In</button>
-              <span class="pull-right"><a href="#">Register</a></span><span><a href="#">Need help?</a></span>
+              <input type="submit" class="btn btn-success btn-lg btn-block" value="Sign in">
+              <span class="pull-right"><a href="register">Register</a></span>
             </div>
           </form>
       </div>
       <div class="modal-footer">
-          <div class="col-md-12">
-          <button class="btn" data-dismiss="modal" aria-hidden="true">Cancel</button>
-		  </div>	
       </div>
   </div>
   </div>
