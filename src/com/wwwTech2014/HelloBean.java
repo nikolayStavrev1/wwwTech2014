@@ -77,7 +77,7 @@ public class HelloBean{
 			@FormParam("first_name") String firstName, @FormParam("last_name") String lastName,
 			@FormParam("display_name") String displayName){
 		
-		if(userService.checkUserInDB(userName, password) != null){
+		if(userService.checkUserInDB(userName, password) == null){
 			User user = new User();
 			user.setUserName(userName);
 			user.setPassword(password);

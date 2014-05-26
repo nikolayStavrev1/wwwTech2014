@@ -41,9 +41,14 @@ public class LoginFilter implements Filter {
 				!req.getRequestURI().equals(req.getContextPath() + "/login") &&
 				!req.getRequestURI().equals(req.getContextPath() + "/register")){
 			resp.sendRedirect(req.getContextPath() + "/login");
+		} else if(req.getSession().getAttribute("User") != null && 
+				(req.getRequestURI().equals(req.getContextPath() + "/login") ||
+				req.getRequestURI().equals(req.getContextPath() + "/register"))) {
+			resp.sendRedirect(req.getContextPath());
 		} else {
 			chain.doFilter(request, response);
 		}
+		System.out.println("WWW");
 	}
 
 	/**
