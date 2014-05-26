@@ -13,13 +13,16 @@
 
 <!-- Latest compiled and minified JavaScript -->
 <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<script type="text/javascript" src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.11.1/jquery.validate.min.js"></script>
+
 </head>
 <body>
 <div class="container">
 
 <div class="row">
     <div class="col-xs-12 col-sm-8 col-md-6 col-sm-offset-2 col-md-offset-3">
-		<form role="form" action="register" method="POST">
+		<form id="registerForm" action="register" method="POST">
 			<h2>Sign Up <small>WWWTech 2014</small></h2>
 			<hr class="colorgraph">
 			<div class="row">
@@ -48,7 +51,7 @@
 				</div>
 				<div class="col-xs-6 col-sm-6 col-md-6">
 					<div class="form-group">
-						<input type="password" name="password_confirmation" id="password_confirmation" class="form-control input-lg" placeholder="Confirm Password" tabindex="6">
+						<input type="password" name="passwordConfirm" id="passwordConfirm" class="form-control input-lg" placeholder="Confirm Password" tabindex="6">
 					</div>
 				</div>
 			</div>
@@ -73,5 +76,37 @@
 	</div><!-- /.modal-dialog -->
 </div><!-- /.modal -->
 </div>
+<script>
+	$(document).ready(function(){
+		$("#registerForm").validate({
+			rules : {
+				email : {
+					required : true,
+					email : true
+				},
+				password : {
+					required : true,
+					minlength : 3,
+					maxlength : 20
+				},
+				passwordConfirm : {
+					required : true,
+					minlength : 3,
+					maxlength : 20,
+					equalTo : "#password"
+				},
+				first_name : {
+					required : true
+				},
+				last_name : {
+					required : true
+				},
+				display_name : {
+					required : true
+				},
+			}
+		});	
+	});
+</script>
 </body>
 </html>

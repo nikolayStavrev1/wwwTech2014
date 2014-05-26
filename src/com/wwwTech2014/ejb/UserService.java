@@ -15,13 +15,12 @@ public class UserService {
 
 	private EntityManager em = JPAUtil.getEntityManager();
 	
-	public boolean checkUserInDB(String userName, String password){
+	public User checkUserInDB(String userName, String password){
     	try{
-    		em.createQuery("SELECT u from User u where u.userName = :username and u.password = :password", User.class)
-    				.setParameter("username", userName).setParameter("password", password).getSingleResult();
-    	return true;
+    	return em.createQuery("SELECT u from User u where u.userName = :username and u.password = :password", User.class)
+				.setParameter("username", userName).setParameter("password", password).getSingleResult();
     	}catch(NoResultException e){
-    		return false;
+    		return null;
     	}
 	}
 	

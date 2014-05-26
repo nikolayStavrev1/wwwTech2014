@@ -1,3 +1,4 @@
+<%@page import="model.User"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
@@ -7,7 +8,9 @@
 <title>Welcome to my app </title>
 </head>
 <body>
-Welcome <% out.println(request.getSession().getAttribute("User"));%>
+Welcome <%  User user = (User) request.getSession().getAttribute("User"); 
+			out.println(user.getDisplayName()); 
+		%>
 <a href="logout">Logout</a>
 </body>
 </html>

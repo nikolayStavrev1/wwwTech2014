@@ -34,7 +34,7 @@ public class HelloBean{
 	
 	@GET
 	public Response get(){
-		return Response.ok(new Viewable("/index", null)).build();
+		return Response.ok(new Viewable("/welcome", null)).build();
 	}
 	
 	/**
@@ -45,24 +45,39 @@ public class HelloBean{
 	 * @return
 	 */
 	@Path("login")
-	@POST
+	@GET
 	public Response login(){
-		return Response.ok(new Viewable("/welcome", null)).build();
+		return Response.ok(new Viewable("/login", null)).build();
 	}
 
+	@Path("login")
+	@POST
+	public Response doLogin(@Context HttpServletRequest request, @FormParam("email") String userName, @FormParam("password") String password){
+		User user = userService.checkUserInDB(userName, password);
+		System.out.println("USER: " + user);
+		if(user != null){
+			request.getSession().setAttribute("User",user);
+			return Response.ok(new Viewable("/welcome", null)).build();
+		} else {
+			Map<String, String> badCredentialsResult = new HashMap<String, String>();
+			badCredentialsResult.put("error","Bad Credentials");
+			return Response.ok(new Viewable("/login", badCredentialsResult)).build();
+		}
+	}
+	
 	@Path("register")
 	@GET
 	public Response getRegisterPage(){
 		return Response.ok(new Viewable("/register", null)).build();
 	}
 	
-	@POST
 	@Path("register")
-	public Response register(@FormParam("email") String userName, @FormParam("password") String password,
+	@POST
+	public Response register(@Context HttpServletRequest request, @FormParam("email") String userName, @FormParam("password") String password,
 			@FormParam("first_name") String firstName, @FormParam("last_name") String lastName,
 			@FormParam("display_name") String displayName){
 		
-		if(!userService.checkUserInDB(userName, password)){
+		if(userService.checkUserInDB(userName, password) != null){
 			User user = new User();
 			user.setUserName(userName);
 			user.setPassword(password);
@@ -70,6 +85,7 @@ public class HelloBean{
 			user.setLastName(lastName);
 			user.setDisplayName(displayName);
 			userService.createUser(user);
+			request.getSession().setAttribute("User", user);
 			return Response.ok(new Viewable("/welcome", null)).build();
 		} else {
 			Map<String, String> errorResult = new HashMap<String, String>();
@@ -82,7 +98,7 @@ public class HelloBean{
 	@GET
 	public Response logout(@Context HttpServletRequest request){
 		request.getSession().invalidate();
-		return Response.ok(new Viewable("/index", null)).build();
+		return Response.ok(new Viewable("/login", null)).build();
 	}
 	
 }
