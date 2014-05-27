@@ -36,7 +36,7 @@
 <div class="row">
     <div class="col-xs-12 col-sm-8 col-md-6 col-sm-offset-2 col-md-offset-3">
 		<form id="registerForm" action="register" method="POST">
-			<h2><div class="imgcont"><img src="images/img/sprites.png" alt="login" /></div>Sign Up <small>WWWTech 2014</small></h2>
+			<h2><div class="imgcont"><img src="libs/img/sprites.png" alt="login" /></div>Sign Up <small>WWWTech 2014</small></h2>
 			<hr class="colorgraph">
 			<div class="row">
 				<div class="col-xs-6 col-sm-6 col-md-6">

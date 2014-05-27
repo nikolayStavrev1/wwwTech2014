@@ -28,8 +28,7 @@
 <div class="wrapper">
 <div class="imgcont"><img src="images/img/sprites.png" alt="login" /></div>
 <h1>
-	Welcome <%  User user = (User) request.getSession().getAttribute("User"); 
-		%>	
+	Welcome <%  User user = (User) request.getSession().getAttribute("User"); %>	
 </h1>
 <h2>
 	<a href="logout">Logout</a>
@@ -38,7 +37,6 @@
 	<h4>your tweet</h4>
 	<input type="file" name="media" />
 </form>
-
 </div>
 </body>
 </html>

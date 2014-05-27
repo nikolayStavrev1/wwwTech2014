@@ -36,22 +36,22 @@ public class LoginFilter implements Filter {
 	public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain) throws IOException, ServletException {
 		HttpServletRequest req = (HttpServletRequest) request;
 		HttpServletResponse resp = (HttpServletResponse) response;
-		chain.doFilter(req, response);
-//		
-//		if(req.getSession().getAttribute("User") == null && 
-//				!req.getRequestURI().equals(req.getContextPath() + "/login") &&
-//				!req.getRequestURI().equals(req.getContextPath() + "/register")){
-//			resp.sendRedirect(req.getContextPath() + "/login");
-//		} else if(req.getSession().getAttribute("User") != null && 
-//				(req.getRequestURI().equals(req.getContextPath() + "/login") ||
-//				req.getRequestURI().equals(req.getContextPath() + "/register"))) {
-//			resp.sendRedirect(req.getContextPath());
-//		} else if((req.getRequestURI().startsWith(req.getContextPath() + "/images"))) {
-//			System.out.println("alqlqlqllql");
-//			chain.doFilter(request, response);
-//		} else {
-//			chain.doFilter(request, response);
-//		}
+		if(req.getRequestURI().startsWith(req.getContextPath() + "/libs")){
+			chain.doFilter(req, response);
+			return;
+		}
+		
+		if(req.getSession().getAttribute("User") == null && 
+				!req.getRequestURI().equals(req.getContextPath() + "/login") &&
+				!req.getRequestURI().equals(req.getContextPath() + "/register")){
+			resp.sendRedirect(req.getContextPath() + "/login");
+		} else if(req.getSession().getAttribute("User") != null && 
+				(req.getRequestURI().equals(req.getContextPath() + "/login") ||
+				req.getRequestURI().equals(req.getContextPath() + "/register"))) {
+			resp.sendRedirect(req.getContextPath());
+		} else {
+			chain.doFilter(request, response);
+		}
 	}
 
 	/**
