@@ -15,12 +15,15 @@
 <!-- www.paulund.co.uk/twitter-bootstrap-alert-boxes -->
 <style type="text/css">
 	.imgcont {
-		width: 200px;
-		height: 200px;
-		overflow: hidden;
+	    display: inline-block;
+	    height: 73px;
+	    overflow: hidden;
+	    padding-right: 0;
+	    width: 85px;
 	}
-	.imgcont img{
-		overflow: hidden;
+	.imgcont img {    
+		margin: 0 0 0 -155px;
+    	overflow: hidden;
 	}
 	.alert {
 	padding: 8px 35px 8px 14px;
