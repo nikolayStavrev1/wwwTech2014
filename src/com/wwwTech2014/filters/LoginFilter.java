@@ -48,7 +48,6 @@ public class LoginFilter implements Filter {
 		} else {
 			chain.doFilter(request, response);
 		}
-		System.out.println("WWW");
 	}
 
 	/**
