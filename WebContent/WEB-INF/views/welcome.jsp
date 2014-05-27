@@ -35,6 +35,10 @@
 <h2>
 	<a href="logout">Logout</a>
 </h2>
+<form action="statuses/update_with_media" method="post" enctype="multipart/form-data">
+	<h4>your tweet</h4>
+	<input type="file" name="media" />
+</form>
 </div>
 <form action="" method="get" enctype="application/x-www-form-urlencoded">
 	<input type="file"/>
