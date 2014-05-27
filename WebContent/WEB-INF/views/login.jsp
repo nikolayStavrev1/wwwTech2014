@@ -57,6 +57,7 @@
   <div class="modal-content">
       <div class="modal-header">
           <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+          <img src="../images/sprites.png" alt="login" width="200" height="200"/>
           <h1 class="text-center">Login <small>WWWTech2014</small></h1>
       </div>
       <c:if test="${not empty it.error}">
