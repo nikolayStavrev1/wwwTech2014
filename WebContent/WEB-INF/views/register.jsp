@@ -6,14 +6,14 @@
 <style type="text/css">
 	.imgcont {
 	    display: inline-block;
-	    height: 73px;
+	    height: 65px;
 	    overflow: hidden;
 	    padding-right: 0;
-	    width: 85px;
+	    width: 54px;
 	}
 	.imgcont img {    
-		margin: 0 0 0 -155px;
-    	overflow: hidden;
+	    margin: -72px 0 0 -142px;
+	    overflow: hidden;
 	}
 </style>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
