@@ -40,8 +40,5 @@
 	<input type="file" name="media" />
 </form>
 </div>
-<form action="" method="get" enctype="application/x-www-form-urlencoded">
-	<input type="file"/>
-</form>
 </body>
 </html>
