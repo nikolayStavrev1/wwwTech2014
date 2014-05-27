@@ -14,6 +14,14 @@
 <script src="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
 <!-- www.paulund.co.uk/twitter-bootstrap-alert-boxes -->
 <style type="text/css">
+	.imgcont {
+		width: 200px;
+		height: 200px;
+		overflow: hidden;
+	}
+	.imgcont img{
+		overflow: hidden;
+	}
 	.alert {
 	padding: 8px 35px 8px 14px;
 	margin-bottom: 18px;
@@ -57,8 +65,7 @@
   <div class="modal-content">
       <div class="modal-header">
           <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-          <img src="../images/sprites.png" alt="login" width="200" height="200"/>
-          <h1 class="text-center">Login <small>WWWTech2014</small></h1>
+          <h1 class="text-center"><div class="imgcont"><img src="images/img/sprites.png" alt="login" width="200" height="200"/></div>Login <small>WWWTech2014</small></h1>
       </div>
       <c:if test="${not empty it.error}">
       <div class="alert alert-error">  
