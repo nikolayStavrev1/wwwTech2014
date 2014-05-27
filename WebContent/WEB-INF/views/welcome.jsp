@@ -26,13 +26,18 @@
 </head>
 <body>
 <div class="wrapper">
-<div class="imgcont"><img src="images/img/sprites.png" alt="login" /></div>
+<div class="imgcont"><img src="libs/img/sprites.png" alt="login" /></div>
 <h1>
-	Welcome <%  User user = (User) request.getSession().getAttribute("User"); %>	
+	Welcome <%  User user = (User) request.getSession().getAttribute("User");
+				out.println(user.getDisplayName());
+			%>	
 </h1>
 <h2>
 	<a href="logout">Logout</a>
 </h2>
 </div>
+<form action="" method="get" enctype="application/x-www-form-urlencoded">
+	<input type="file"/>
+</form>
 </body>
 </html>
