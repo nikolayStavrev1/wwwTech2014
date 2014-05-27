@@ -68,7 +68,7 @@
   <div class="modal-content">
       <div class="modal-header">
           <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-          <h1 class="text-center"><div class="imgcont"><img src="images/img/sprites.png" alt="login" /></div>Login <small>WWWTech2014</small></h1>
+          <h1 class="text-center"><div class="imgcont"><img src="libs/img/sprites.png" alt="login" /></div>Login <small>WWWTech2014</small></h1>
       </div>
       <c:if test="${not empty it.error}">
       <div class="alert alert-error">  
