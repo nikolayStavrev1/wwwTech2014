@@ -31,7 +31,7 @@
     </init-param>
     <init-param>
     	<param-name>com.sun.jersey.config.property.WebPageContentRegex</param-name>
-    	<param-value>/images/.*</param-value>
+    	<param-value>/libs/.*</param-value>
   	</init-param>
   </filter>
   <filter-mapping>

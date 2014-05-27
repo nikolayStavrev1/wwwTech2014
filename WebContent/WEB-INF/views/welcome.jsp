@@ -9,7 +9,8 @@
 </head>
 <body>
 Welcome <%  User user = (User) request.getSession().getAttribute("User"); 
-		%>
+			out.println(user.getDisplayName());
+			%>
 <a href="logout">Logout</a>
 </body>
 </html>
