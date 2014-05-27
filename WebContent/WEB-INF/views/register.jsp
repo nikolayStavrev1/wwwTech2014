@@ -3,6 +3,19 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
+<style type="text/css">
+	.imgcont {
+	    display: inline-block;
+	    height: 73px;
+	    overflow: hidden;
+	    padding-right: 0;
+	    width: 85px;
+	}
+	.imgcont img {    
+		margin: 0 0 0 -155px;
+    	overflow: hidden;
+	}
+</style>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Insert title here</title>
 <!-- Latest compiled and minified CSS -->
@@ -23,7 +36,7 @@
 <div class="row">
     <div class="col-xs-12 col-sm-8 col-md-6 col-sm-offset-2 col-md-offset-3">
 		<form id="registerForm" action="register" method="POST">
-			<h2>Sign Up <small>WWWTech 2014</small></h2>
+			<h2><div class="imgcont"><img src="images/img/sprites.png" alt="login" /></div>Sign Up <small>WWWTech 2014</small></h2>
 			<hr class="colorgraph">
 			<div class="row">
 				<div class="col-xs-6 col-sm-6 col-md-6">
