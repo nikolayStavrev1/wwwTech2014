@@ -1,11 +1,12 @@
 package com.wwwTech2014;
-
+	
 
 import java.util.HashMap;
 import java.util.Map;
 
 import javax.ejb.EJB;
 import javax.persistence.EntityManager;
+import javax.persistence.criteria.Predicate;
 import javax.servlet.http.HttpServletRequest;
 import javax.ws.rs.Consumes;
 import javax.ws.rs.FormParam;
@@ -32,6 +33,10 @@ public class HelloBean{
 	@EJB
 	private UserService userService;
 	
+	/**
+	 * 
+	 * @return welcome.jsp
+	 */
 	@GET
 	public Response get(){
 		return Response.ok(new Viewable("/welcome", null)).build();
@@ -50,8 +55,8 @@ public class HelloBean{
 		return Response.ok(new Viewable("/login", null)).build();
 	}
 
-	@Path("login")
 	@POST
+	@Path("login")
 	public Response doLogin(@Context HttpServletRequest request, @FormParam("email") String userName, @FormParam("password") String password){
 		User user = userService.checkUserInDB(userName, password);
 		System.out.println("USER: " + user);
